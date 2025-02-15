@@ -14,8 +14,12 @@ import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AlertCircle } from "lucide-react";
 import contractABI from "../lib/HealthChainAbi.json"; // Ensure correct path
+import { CONTRACT_ADDRESS } from "@/lib/contractAddress";
+import { getFile } from "@/lib/getFromIPFS";
+// const CONTRACT_ADDRESS = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"; // Update with deployed contract address
 
-const CONTRACT_ADDRESS = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"; // Update with deployed contract address
+
+// ACTUALLY USED IN VERIFIER
 
 export function DoctorVerificationForm() {
   const [doctorAddress, setDoctorAddress] = useState("");
@@ -23,6 +27,8 @@ export function DoctorVerificationForm() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
+
+  
   const fetchDoctorVerification = async () => {
     setLoading(true);
     setError(null);
@@ -42,10 +48,31 @@ export function DoctorVerificationForm() {
       const doctor = await contract.doctors(doctorAddress);
       console.log("Fetched Doctor: ", doctor);
 
+      const doctorVerifierIPFS = await contract.getDoctorVerifierList();
+
+      console.log("Doctor Verifier IPFS: ", doctorVerifierIPFS);
+      const data = await getFile(doctorVerifierIPFS);
+      console.log("This is my data: ", data);
+
+
+      const verifierList = data?.split(",").map((addr) => addr.trim().toLowerCase());
+
+    // Get signer’s address and check if it's in the verifier list
+    const signerAddress = signer.address;
+    console.log("Signer Address: ", signerAddress);
+
+    if (!verifierList.includes(signerAddress.toLowerCase())) {
+      setError("You are not authorized to verify doctors.");
+      setLoading(false);
+      return;
+    }
+    else{
       const tx = await contract.verifyDoctor(doctorAddress);
-      if(tx){
-        console.log("Success YAYYYYYY")
-      }
+    }
+
+      // if(tx){
+      //   console.log("Success YAYYYYYY")
+      // }
       if (!doctor.exists) {
         setError("Doctor not found in the system.");
       } else {

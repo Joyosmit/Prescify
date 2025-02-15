@@ -23,8 +23,9 @@ import { AlertCircle, Plus, X } from "lucide-react";
 import contractABI from "../lib/HealthChainAbi.json"; // Ensure correct path
 import { createJsonFile } from "@/lib/convertToFile";
 import upload from "@/lib/uploadToIPFS";
+import { CONTRACT_ADDRESS } from "@/lib/contractAddress";
 
-const CONTRACT_ADDRESS = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"; // Update with deployed contract address
+// const CONTRACT_ADDRESS = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"; // Update with deployed contract address
 const CONTROLLED_DRUGS = [
   "Morphine",
   "Oxycodone",

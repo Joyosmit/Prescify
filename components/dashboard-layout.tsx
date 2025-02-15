@@ -37,7 +37,7 @@ export function DashboardLayout({ children, role }: DashboardLayoutProps) {
                 <path d="M12 8V16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M8 12H16" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <span className="ml-2 text-2xl font-bold">Prescify</span>
+              <span className="ml-2 text-2xl font-bold pr-8">Prescify</span>
             </Link>
             <h1 className="text-2xl font-bold hidden md:block">{role} Dashboard</h1>
           </div>

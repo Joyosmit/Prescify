@@ -30,6 +30,7 @@ export function Sidebar({ role, isOpen, onClose }: SidebarProps) {
       { icon: Search, label: "Verify Prescription", href: "/pharmacist-dashboard/verify-prescription" },
       { icon: Pill, label: "Dispense Medication", href: "/pharmacist-dashboard/dispense-medication" },
       { icon: ClipboardList, label: "Dispensing History", href: "/pharmacist-dashboard/dispensing-history" },
+      { icon: ClipboardList, label: "Register Yourself", href: "/pharmacist-dashboard/register-pharmacist" },
     ],
     Verifier: [
       { icon: Home, label: "Dashboard", href: "/verifier-dashboard" },

@@ -24,8 +24,9 @@ import contractABI from "../lib/HealthChainAbi.json"; // Ensure correct path
 import { createJsonFile } from "@/lib/convertToFile";
 import upload from "@/lib/uploadToIPFS";
 import QRGenerator from "./qr-code";
+import { CONTRACT_ADDRESS } from "@/lib/contractAddress";
 
-const CONTRACT_ADDRESS = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"; // Update with deployed contract address
+// const CONTRACT_ADDRESS = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"; // Update with deployed contract address
 const CONTROLLED_DRUGS = [
   "Morphine",
   "Oxycodone",
@@ -120,7 +121,7 @@ export function PrescriptionForm() {
       
       const prescriptionHash = keccak256(Buffer.from(formattedString));
       const prescriptionData = {
-        patientHash: patientAddress,
+        patientHash: keccak256(Buffer.from(patientAddress)),
         doctorAddress: await signer.getAddress(),
         prescriptionHash
       };
@@ -150,7 +151,7 @@ export function PrescriptionForm() {
         setLoading(false);
         return;
       }
-      const tx2 = await contract.issuePrescription(patientAddress, ipfsHash);
+      const tx2 = await contract.issuePrescription(keccak256(Buffer.from(patientAddress)), ipfsHash);
     } catch (err) {
       console.error("Transaction failed", err);
       setError("Failed to issue prescription. Check console for details.");

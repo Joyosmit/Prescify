@@ -4,8 +4,9 @@ import { useState } from "react";
 import { ethers } from "ethers";
 import contractABI from "../lib/HealthChainAbi.json"; // Ensure correct path
 import upload from "@/lib/uploadToIPFS";
+import { CONTRACT_ADDRESS } from "@/lib/contractAddress";
 
-const CONTRACT_ADDRESS = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"; // Replace with deployed contract address
+// const CONTRACT_ADDRESS = "0x2279B7A0a67DB372996a5FaB50D91eAA73d2eBe6"; // Replace with deployed contract address
 
 interface DoctorDetails {
   name: string;
