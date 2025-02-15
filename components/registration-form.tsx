@@ -93,12 +93,12 @@ export function RegistrationForm({ role }: RegistrationFormProps) {
       console.log("Transaction Hash of Pharmacist:", tx);
       setTxHash(tx.hash);
 
-      console.log("Doctor registered, fetching details...");
+      console.log("Pharmacist registered, fetching details...");
 
-      // Fetch doctor details
-      const doctorDetailsOnChain = await contract.doctors(await signer.getAddress());
+      // Fetch pharmacist details
+      const pharmacistDetailsOnChain = await contract.pharmacists(await signer.getAddress());
 
-      console.log("Doctor Details from Contract:", doctorDetailsOnChain);
+      console.log("Doctor Details from Contract:", pharmacistDetailsOnChain);
     } catch (error) {
       console.error("Error registering doctor:", error);
     } finally {
