@@ -151,7 +151,7 @@ export function PrescriptionForm() {
         setLoading(false);
         return;
       }
-      const tx2 = await contract.issuePrescription(keccak256(Buffer.from(patientAddress)), ipfsHash);
+      const tx2 = await contract.issuePrescription(keccak256(Buffer.from(patientAddress.trim())).trim(), ipfsHash);
     } catch (err) {
       console.error("Transaction failed", err);
       setError("Failed to issue prescription. Check console for details.");

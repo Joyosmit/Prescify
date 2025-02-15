@@ -49,7 +49,7 @@ export function MetaMaskConnector({ onConnection }: MetaMaskConnectorProps) {
   return (
     <div>
       {account ? (
-        <p className="text-sm text-muted-foreground">Connected: {account}</p>
+        <p className="text-[10px] text-muted-foreground">Connected: {account}</p>
       ) : (
         <Button onClick={connectWallet}>Connect MetaMask</Button>
       )}

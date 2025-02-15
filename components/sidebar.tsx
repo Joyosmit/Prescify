@@ -12,24 +12,24 @@ export function Sidebar({ role, isOpen, onClose }: SidebarProps) {
   const menuItems = {
     Doctor: [
       { icon: Home, label: "Dashboard", href: "/doctor-dashboard" },
-      { icon: ShieldCheck, label: "Verify Yourself", href: "/doctor-dashboard/verify-yourself" },
+      // { icon: ShieldCheck, label: "Verify Yourself", href: "/doctor-dashboard/verify-yourself" },
       { icon: FileText, label: "Issue Prescription", href: "/doctor-dashboard/issue-prescription" },
-      { icon: Users, label: "Manage Patients", href: "/doctor-dashboard/manage-patients" },
-      { icon: ClipboardList, label: "Prescription History", href: "/doctor-dashboard/prescription-history" },
+      // { icon: Users, label: "Manage Patients", href: "/doctor-dashboard/manage-patients" },
+      // { icon: ClipboardList, label: "Prescription History", href: "/doctor-dashboard/prescription-history" },
       { icon: ClipboardList, label: "Register Yourself", href: "/doctor-dashboard/register-yourself" },
     ],
     Patient: [
       { icon: Home, label: "Dashboard", href: "/patient-dashboard" },
-      { icon: Search, label: "Verify Prescription", href: "/patient-dashboard/verify-prescription" },
-      { icon: ClipboardList, label: "Prescription History", href: "/patient-dashboard/prescription-history" },
-      { icon: User, label: "Profile", href: "/patient-dashboard/profile" },
+      // { icon: Search, label: "Verify Prescription", href: "/patient-dashboard/verify-prescription" },
+      // { icon: ClipboardList, label: "Prescription History", href: "/patient-dashboard/prescription-history" },
+      // { icon: User, label: "Profile", href: "/patient-dashboard/profile" },
     ],
     Pharmacist: [
       { icon: Home, label: "Dashboard", href: "/pharmacist-dashboard" },
-      { icon: ShieldCheck, label: "Verify Yourself", href: "/pharmacist-dashboard/verify-yourself" },
+      // { icon: ShieldCheck, label: "Verify Yourself", href: "/pharmacist-dashboard/verify-yourself" },
       { icon: Search, label: "Verify Prescription", href: "/pharmacist-dashboard/verify-prescription" },
-      { icon: Pill, label: "Dispense Medication", href: "/pharmacist-dashboard/dispense-medication" },
-      { icon: ClipboardList, label: "Dispensing History", href: "/pharmacist-dashboard/dispensing-history" },
+      // { icon: Pill, label: "Dispense Medication", href: "/pharmacist-dashboard/dispense-medication" },
+      // { icon: ClipboardList, label: "Dispensing History", href: "/pharmacist-dashboard/dispensing-history" },
       { icon: ClipboardList, label: "Register Yourself", href: "/pharmacist-dashboard/register-pharmacist" },
     ],
     Verifier: [
