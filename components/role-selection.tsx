@@ -63,7 +63,7 @@ export function RoleSelection() {
             onChange={() => setTermsAccepted(!termsAccepted)}
             className="w-5 h-5 cursor-pointer"
           />
-          <label htmlFor="terms" className="text-gray-700 cursor-pointer">
+          <label htmlFor="terms" className="text-gray-300 cursor-pointer">
             I agree to the{" "}
             <a href="/terms" className="text-blue-600 underline hover:text-blue-800">
               terms and conditions

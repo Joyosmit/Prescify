@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import jsQR from "jsqr";
+import { useScanStore } from "@/lib/useScanStore";
 
 export default function QRImageScanner({ onScan }: { onScan?: (data: string) => void }) {
-  const [scannedData, setScannedData] = useState<string | null>(null);
+  // const [scannedData, setScannedData] = useState<string | null>(null);
+  const { scannedData, setScannedData } = useScanStore();
 
   const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];

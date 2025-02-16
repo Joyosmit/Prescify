@@ -12,7 +12,7 @@ export default function PharmacistDashboard() {
         <Card>
           <CardHeader>
             <CardTitle>Verify Prescription</CardTitle>
-            <CardDescription>Check and verify a prescription</CardDescription>
+            <CardDescription>Verify a prescription, then dispense it if valid</CardDescription>
           </CardHeader>
           <CardContent>
             <Link href="/pharmacist-dashboard/verify-prescription">
@@ -22,7 +22,7 @@ export default function PharmacistDashboard() {
             </Link>
           </CardContent>
         </Card>
-        <Card>
+        {/* <Card>
           <CardHeader>
             <CardTitle>Dispense Medication</CardTitle>
             <CardDescription>Record dispensed medications</CardDescription>
@@ -34,16 +34,16 @@ export default function PharmacistDashboard() {
               </Button>
             </Link>
           </CardContent>
-        </Card>
+        </Card> */}
         <Card>
           <CardHeader>
-            <CardTitle>Dispensing History</CardTitle>
-            <CardDescription>View dispensing history</CardDescription>
+            <CardTitle>Register Yourself</CardTitle>
+            <CardDescription>Get registered as a pharmacist</CardDescription>
           </CardHeader>
           <CardContent>
-            <Link href="/pharmacist-dashboard/dispensing-history">
+            <Link href="/pharmacist-dashboard/register-pharmacist">
               <Button className="w-full">
-                <ClipboardList className="mr-2 h-4 w-4" /> View History
+                <ClipboardList className="mr-2 h-4 w-4" /> Register As Pharmacist
               </Button>
             </Link>
           </CardContent>

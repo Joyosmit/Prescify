@@ -14,6 +14,7 @@ import { AlertCircle, CheckCircle } from "lucide-react";
 import contractABI from "../lib/HealthChainAbi.json";
 import { getFile } from "@/lib/getFromIPFS";
 import { CONTRACT_ADDRESS } from "@/lib/contractAddress";
+import ScannedDataTable from "./ScannedDataTable";
 
 
 
@@ -109,6 +110,7 @@ export function PrescriptionVerifier() {
     <div>
       <form onSubmit={handleFetchPrescription} className="space-y-4">
     <QRImageScanner onScan={setFormattedString} />
+    <ScannedDataTable/>
 
         <Button type="submit" disabled={loading}>
           {loading ? "Verifying..." : "Fetch Prescription"}
