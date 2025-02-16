@@ -24,26 +24,13 @@ export default function DoctorDashboard() {
         </Card>
         <Card>
           <CardHeader>
-            <CardTitle>Manage Patients</CardTitle>
-            <CardDescription>View and manage your patient list</CardDescription>
+            <CardTitle>Register Yourself</CardTitle>
+            <CardDescription>Register yourself as a doctor on our system!</CardDescription>
           </CardHeader>
           <CardContent>
-            <Link href="/doctor-dashboard/manage-patients">
+            <Link href="/doctor-dashboard/register-yourself">
               <Button className="w-full">
-                <Users className="mr-2 h-4 w-4" /> Manage Patients
-              </Button>
-            </Link>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Prescription History</CardTitle>
-            <CardDescription>View your issued prescriptions</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <Link href="/doctor-dashboard/prescription-history">
-              <Button className="w-full">
-                <ClipboardList className="mr-2 h-4 w-4" /> View History
+                <ClipboardList className="mr-2 h-4 w-4" /> Get Registered
               </Button>
             </Link>
           </CardContent>
